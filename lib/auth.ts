@@ -46,9 +46,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
           }),
         });
         if (!res.ok) {
-          const err = await res.json();
-          console.error("[auth] Resend API error:", JSON.stringify(err));
-          throw new Error("Resend error: " + JSON.stringify(err));
+          throw new Error("Resend error: " + (await res.text()));
         }
       },
     }),

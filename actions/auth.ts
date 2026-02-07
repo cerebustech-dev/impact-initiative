@@ -41,17 +41,10 @@ export async function loginAction(formData: FormData) {
   rateLimitMap.set(email, Date.now());
 
   try {
-    const result = await signIn("resend", { email, redirectTo: "/discuss", redirect: false });
-    // signIn with redirect:false returns a URL string
-    // If it contains "error", the email likely failed to send
-    if (typeof result === "string" && result.includes("error")) {
-      console.error("Auth signIn returned error URL:", result);
-      return { error: "Failed to send magic link. Please try again." };
-    }
+    await signIn("resend", { email, redirectTo: "/discuss", redirect: false });
     return { success: true };
   } catch (err) {
     if (isRedirectError(err)) throw err;
-    console.error("Auth signIn threw:", err);
     return { error: "Something went wrong. Please try again." };
   }
 }
