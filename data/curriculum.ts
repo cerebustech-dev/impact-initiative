@@ -35,7 +35,7 @@ export interface ProgramConfig {
 
 export const PROGRAM_CONFIG: ProgramConfig = {
   title: "The Impact Initiative",
-  tagline: "A 6-month AI leadership journey for the leaders who shape what comes next.",
+  tagline: "A 6-month leadership development journey for the leaders who shape what comes next.",
   partner: "Walsh College",
   startDate: "2026-02-01",
 };
@@ -198,10 +198,10 @@ export const MONTHS: Month[] = [
   {
     id: "month-6",
     number: 6,
-    title: "Your Turn",
-    subtitle: "Capstone presentations",
+    title: "The End & The Beginning",
+    subtitle: "What we've learned, where we're going",
     description:
-      "This is where it all comes together. Each participant presents their AI leadership project — a concrete plan for how they'll bring AI into their team's work. No readings this month, just your ideas and your voice.",
+      "We close by looking forward. After five months of reading, debating, and building shared mental models, we turn everything we've learned into a lens for what comes next. What trends are accelerating? What surprises are still ahead? And what does it mean to lead well in a world that keeps changing faster than the org chart?",
     unlockDate: "2026-07-01",
     readings: [],
   },

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About | The Impact Initiative",
   description:
-    "Learn about The Impact Initiative — a 6-month AI leadership program in partnership with Walsh College.",
+    "Learn about The Impact Initiative — a 6-month leadership development program in partnership with Walsh College.",
 };
 
 export default function AboutPage() {
@@ -18,19 +18,20 @@ export default function AboutPage() {
           <section>
             <h2 className="text-2xl font-bold mt-0">What is The Impact Initiative?</h2>
             <p className="text-slate-body leading-relaxed">
-              The Impact Initiative is a 6-month AI leadership program designed
-              for supervisors and managers who want to understand AI deeply
-              enough to lead through the changes it brings. This isn&apos;t a
+              The Impact Initiative is a 6-month leadership development program
+              offered through HR&apos;s Leadership Academy. AI is one of
+              several topics we explore — but it&apos;s the one reshaping every
+              other topic, so we give it serious attention. This isn&apos;t a
               technical bootcamp — it&apos;s a reading-and-discussion journey
               through the ideas, debates, and practical skills that will define
               the next decade of leadership.
             </p>
             <p className="text-slate-body leading-relaxed">
-              Roughly 10 participants meet monthly to discuss carefully curated
-              readings — from foundational AI research to practical guides for
-              working alongside AI systems. Each month builds on the last,
-              moving from &ldquo;what is this?&rdquo; to &ldquo;what do I do
-              about it?&rdquo;
+              Roughly 10 supervisors and managers meet monthly to discuss
+              carefully curated readings — from foundational research to
+              practical guides for leading through change. Each month builds on
+              the last, moving from &ldquo;what is this?&rdquo; to &ldquo;what
+              do I do about it?&rdquo;
             </p>
           </section>
 
@@ -70,12 +71,12 @@ export default function AboutPage() {
               </div>
               <div className="bg-white rounded-xl p-6 shadow-sm shadow-card-shadow">
                 <h3 className="font-serif text-lg font-semibold text-slate-heading">
-                  Capstone Project
+                  Looking Forward
                 </h3>
                 <p className="mt-2 text-sm text-slate-body">
-                  In Month 6, each participant presents their AI leadership
-                  plan — a concrete proposal for bringing AI into their
-                  team&apos;s work.
+                  In Month 6, we turn everything we&apos;ve learned into a
+                  lens for the future — what&apos;s accelerating, what&apos;s
+                  still ahead, and what it means to lead well through it.
                 </p>
               </div>
             </div>
@@ -84,18 +85,22 @@ export default function AboutPage() {
           {/* About Rod */}
           <section>
             <h2 className="text-2xl font-bold">About the Instructor</h2>
-            <p className="text-slate-body leading-relaxed">
-              Rod is a technology leader who believes the most important thing
-              about AI isn&apos;t the technology itself — it&apos;s what
-              thoughtful leaders do with it. He created The Impact Initiative
-              because he saw a gap: plenty of AI courses teach you how to use
-              tools, but very few help you develop the judgment to lead through
-              a technological sea change.
+            <p className="text-slate-body leading-relaxed italic">
+              Most AI training teaches prompts.<br />
+              This one teaches discernment.
             </p>
             <p className="text-slate-body leading-relaxed">
-              This program is part of HR&apos;s Leadership Academy, reflecting
-              the belief that AI literacy is now a core leadership competency,
-              not a technical specialty.
+              Rod Davenport is the CIO and one of the instructors in
+              HR&apos;s &ldquo;The Impact Initiative.&rdquo; The real AI gap
+              isn&apos;t access; it&apos;s judgment, especially when the tool
+              is fast, persuasive, and occasionally wrong. We&apos;ll do just
+              enough tech to build shared mental models, including a quick tour
+              of AI history: symbolic AI, what changed with machine learning,
+              and why transformers changed the game. Then we&apos;ll spend most
+              of our time on what leaders can&apos;t dodge: what should be
+              automated, what must remain human, how trust gets earned (or
+              lost), and how to use AI to amplify good intent instead of
+              scaling bad habits.
             </p>
           </section>
 

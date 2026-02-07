@@ -17,13 +17,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "The Impact Initiative | AI Leadership Program",
+  title: "The Impact Initiative | Leadership Development Program",
   description:
-    "A 6-month AI leadership journey for supervisors and managers, in partnership with Walsh College.",
+    "A 6-month leadership development journey for supervisors and managers, in partnership with Walsh College.",
   openGraph: {
-    title: "The Impact Initiative | AI Leadership Program",
+    title: "The Impact Initiative | Leadership Development Program",
     description:
-      "A 6-month AI leadership journey for supervisors and managers, in partnership with Walsh College.",
+      "A 6-month leadership development journey for supervisors and managers, in partnership with Walsh College.",
     type: "website",
     url: "https://rodsaiclass.com",
   },

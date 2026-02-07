@@ -15,9 +15,6 @@ export default function Footer() {
             Walsh College
           </a>
         </p>
-        <p className="text-slate-muted text-xs mt-2">
-          &copy; {year} The Impact Initiative. All rights reserved.
-        </p>
       </div>
     </footer>
   );

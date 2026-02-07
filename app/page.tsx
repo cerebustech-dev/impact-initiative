@@ -25,7 +25,7 @@ export default function Home() {
                 Months
               </div>
               <p className="mt-2 text-slate-body text-sm">
-                From foundations to your own AI leadership project
+                From foundations to the future of leadership
               </p>
             </div>
             <div>

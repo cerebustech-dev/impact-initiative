@@ -8,8 +8,8 @@ export default function HeroSection() {
           The Impact Initiative
         </h1>
         <p className="mt-6 text-lg md:text-xl text-slate-body max-w-2xl mx-auto leading-relaxed">
-          A 6-month AI leadership journey for the leaders who shape what comes
-          next. Read deeply, think critically, lead boldly.
+          A 6-month leadership development journey for the leaders who shape
+          what comes next. Read deeply, think critically, lead boldly.
         </p>
         <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
           <Link

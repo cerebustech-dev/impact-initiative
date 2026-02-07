@@ -42,7 +42,7 @@ export default function MonthSection({ month }: MonthSectionProps) {
 
           {month.readings.length === 0 && (
             <p className="mt-6 text-slate-muted italic">
-              No readings this month — it&apos;s your turn to lead.
+              No assigned readings this month — we&apos;ll bring the conversation ourselves.
             </p>
           )}
 
