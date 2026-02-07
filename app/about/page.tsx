@@ -15,7 +15,7 @@ export default function AboutPage() {
 
         <div className="mt-8 prose prose-slate max-w-none space-y-8">
           {/* Program Overview */}
-          <section>
+          <section className="space-y-4">
             <h2 className="text-2xl font-bold mt-0">What is The Impact Initiative?</h2>
             <p className="text-slate-body leading-relaxed">
               The Impact Initiative is a 6-month leadership development program
@@ -83,29 +83,33 @@ export default function AboutPage() {
           </section>
 
           {/* About Rod */}
-          <section>
+          <section className="space-y-4">
             <h2 className="text-2xl font-bold">About the Instructor</h2>
-            <p className="text-slate-body leading-relaxed italic">
+            <p className="text-slate-body leading-relaxed italic text-lg">
               Most AI training teaches prompts.<br />
               This one teaches discernment.
             </p>
             <p className="text-slate-body leading-relaxed">
               Rod Davenport is the CIO and one of the instructors in
               HR&apos;s &ldquo;The Impact Initiative.&rdquo; The real AI gap
-              isn&apos;t access; it&apos;s judgment, especially when the tool
-              is fast, persuasive, and occasionally wrong. We&apos;ll do just
-              enough tech to build shared mental models, including a quick tour
-              of AI history: symbolic AI, what changed with machine learning,
-              and why transformers changed the game. Then we&apos;ll spend most
-              of our time on what leaders can&apos;t dodge: what should be
-              automated, what must remain human, how trust gets earned (or
-              lost), and how to use AI to amplify good intent instead of
-              scaling bad habits.
+              isn&apos;t access; it&apos;s judgment — especially when the tool
+              is fast, persuasive, and occasionally wrong.
+            </p>
+            <p className="text-slate-body leading-relaxed">
+              We&apos;ll do just enough tech to build shared mental models,
+              including a quick tour of AI history: symbolic AI, what changed
+              with machine learning, and why transformers changed the game.
+            </p>
+            <p className="text-slate-body leading-relaxed">
+              Then we&apos;ll spend most of our time on what leaders
+              can&apos;t dodge: what should be automated, what must remain
+              human, how trust gets earned (or lost), and how to use AI to
+              amplify good intent instead of scaling bad habits.
             </p>
           </section>
 
           {/* Walsh College Partnership */}
-          <section>
+          <section className="space-y-4">
             <h2 className="text-2xl font-bold">Walsh College Partnership</h2>
             <p className="text-slate-body leading-relaxed">
               The Impact Initiative is offered in coordination with{" "}
