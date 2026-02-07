@@ -41,7 +41,7 @@ export async function loginAction(formData: FormData) {
   rateLimitMap.set(email, Date.now());
 
   try {
-    const result = await signIn("resend", { email, redirect: false });
+    const result = await signIn("resend", { email, redirectTo: "/discuss", redirect: false });
     // signIn with redirect:false returns a URL string
     // If it contains "error", the email likely failed to send
     if (typeof result === "string" && result.includes("error")) {
