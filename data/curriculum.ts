@@ -65,7 +65,7 @@ export const MONTHS: Month[] = [
         author: "Ethan Mollick",
         summary:
           "Mollick makes the case that managers — not engineers — may be the biggest beneficiaries of AI. The skills that matter most (delegation, quality control, orchestration) are exactly what AI demands.",
-        url: "https://www.oneusefulthing.org/p/why-management-is-becoming-an-ai",
+        url: "https://www.oneusefulthing.org/p/management-as-ai-superpower",
         type: "article",
       },
     ],
