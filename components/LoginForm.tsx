@@ -1,9 +1,13 @@
 "use client";
 
 import { useActionState } from "react";
+import { useSearchParams } from "next/navigation";
 import { loginAction } from "@/actions/auth";
 
 export default function LoginForm() {
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") ?? "/discuss";
+
   const [state, formAction, pending] = useActionState(
     async (_prev: { error?: string; success?: boolean } | null, formData: FormData) => {
       return loginAction(formData);
@@ -40,6 +44,7 @@ export default function LoginForm() {
 
   return (
     <form action={formAction} className="space-y-4">
+      <input type="hidden" name="callbackUrl" value={callbackUrl} />
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-slate-body mb-1.5">
           Email address

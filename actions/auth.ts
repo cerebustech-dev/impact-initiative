@@ -2,11 +2,9 @@
 
 import { signIn } from "@/lib/auth";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
-
-// In-memory rate limit: 1 magic link per email per minute
-// Resets on deploy — acceptable for ~10 users
-const rateLimitMap = new Map<string, number>();
-const RATE_LIMIT_MS = 60_000;
+import { headers } from "next/headers";
+import { checkRateLimit, recordRequest, rollbackRequest } from "@/lib/rate-limit";
+import { sanitizeCallbackUrl } from "@/lib/url";
 
 function getAllowedEmails(): Set<string> {
   const raw = process.env.ALLOWED_EMAILS ?? "";
@@ -16,6 +14,13 @@ function getAllowedEmails(): Set<string> {
       .map((e) => e.trim().toLowerCase())
       .filter(Boolean)
   );
+}
+
+async function getClientIp(): Promise<string> {
+  const h = await headers();
+  const forwarded = h.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0].trim();
+  return h.get("x-real-ip") ?? "unknown";
 }
 
 export async function loginAction(formData: FormData) {
@@ -32,19 +37,25 @@ export async function loginAction(formData: FormData) {
     return { error: "This email is not authorized. Contact your program administrator." };
   }
 
-  // Rate limit check
-  const lastSent = rateLimitMap.get(email) ?? 0;
-  if (Date.now() - lastSent < RATE_LIMIT_MS) {
-    return { error: "A magic link was just sent. Please check your email or wait a minute." };
+  // Rate limit check (per-email + per-IP)
+  const ip = await getClientIp();
+  const limit = checkRateLimit(email, ip);
+  if (!limit.allowed) {
+    return { error: limit.error };
   }
 
-  rateLimitMap.set(email, Date.now());
+  recordRequest(email, ip);
+
+  // Sanitize callbackUrl from form data
+  const rawCallback = formData.get("callbackUrl");
+  const redirectTo = sanitizeCallbackUrl(rawCallback);
 
   try {
-    await signIn("resend", { email, redirectTo: "/discuss", redirect: false });
+    await signIn("resend", { email, redirectTo, redirect: false });
     return { success: true };
   } catch (err) {
     if (isRedirectError(err)) throw err;
+    rollbackRequest(email);
     return { error: "Something went wrong. Please try again." };
   }
 }

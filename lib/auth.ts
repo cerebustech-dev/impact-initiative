@@ -8,6 +8,7 @@ import {
   sessions,
   verificationTokens,
 } from "@/db/schema";
+import { sanitizeCallbackUrl } from "@/lib/url";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: DrizzleAdapter(db, {
@@ -26,7 +27,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         // one-time tokens before the user can click.
         const parsed = new URL(url);
         const verifyUrl = new URL("/auth/verify", parsed.origin);
-        verifyUrl.searchParams.set("callbackUrl", parsed.searchParams.get("callbackUrl") ?? "/discuss");
+        verifyUrl.searchParams.set("callbackUrl", sanitizeCallbackUrl(parsed.searchParams.get("callbackUrl")));
         verifyUrl.searchParams.set("token", parsed.searchParams.get("token") ?? "");
         verifyUrl.searchParams.set("email", parsed.searchParams.get("email") ?? "");
         const safeUrl = verifyUrl.toString();
@@ -59,6 +60,14 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     session({ session, user }) {
       session.user.id = user.id;
       return session;
+    },
+    redirect({ url, baseUrl }) {
+      // Allow relative paths starting with / but not // (protocol-relative)
+      if (url.startsWith("/") && !url.startsWith("//")) return url;
+      // Allow same-origin absolute URLs
+      if (url.startsWith(baseUrl)) return url;
+      // Fallback to /discuss for everything else
+      return `${baseUrl}/discuss`;
     },
   },
 });

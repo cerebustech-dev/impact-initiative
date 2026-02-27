@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import LoginForm from "@/components/LoginForm";
 
@@ -17,7 +18,9 @@ export default function LoginPage() {
               Enter your email to receive a magic link
             </p>
           </div>
-          <LoginForm />
+          <Suspense fallback={null}>
+            <LoginForm />
+          </Suspense>
         </div>
       </div>
     </div>
