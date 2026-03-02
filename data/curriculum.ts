@@ -94,8 +94,17 @@ export const MONTHS: Month[] = [
         author: "Demis Hassabis",
         summary:
           "DeepMind's co-founder and CEO delivers his Nobel Prize lecture on AlphaFold and the future of AI-driven science. A masterclass in how AI is already revolutionizing our understanding of biology.",
-        url: "https://www.youtube.com/watch?v=MCYPH4eB3JA",
+        url: "https://www.youtube.com/watch?v=YtPaZsasmNA",
         type: "lecture",
+      },
+      {
+        id: "r2-3",
+        title: "The Adolescence of Technology",
+        author: "Dario Amodei",
+        summary:
+          "Anthropic's CEO examines the civilizational risks of powerful AI — from autonomy failures to misuse for destruction and authoritarianism. Rather than doomerism, Amodei advocates measured, evidence-based defenses including constitutional AI, interpretability research, and strategic government intervention.",
+        url: "https://www.darioamodei.com/essay/the-adolescence-of-technology",
+        type: "essay",
       },
     ],
   },
@@ -105,17 +114,17 @@ export const MONTHS: Month[] = [
     title: "The Risks",
     subtitle: "What could go wrong",
     description:
-      "Every powerful technology creates new risks. We examine two very different critiques — one from an AI company CEO on the challenges of deploying transformative technology, and a landmark academic paper on the dangers of large language models.",
+      "Before we can evaluate AI's risks, we need to understand the architecture that made it all possible — and then confront the critiques of what it's become. This month pairs the foundational paper behind every modern AI system with a landmark critique of where it all went wrong.",
     unlockDate: "2026-04-01",
     readings: [
       {
         id: "r3-1",
-        title: "The Adolescence of AI Technology",
-        author: "Dario Amodei",
+        title: "Attention Is All You Need",
+        author: "Vaswani, Shazeer, Parmar, et al.",
         summary:
-          "Amodei argues we're in an 'adolescent' phase of AI — powerful enough to cause real harm, not yet mature enough to be reliably safe. A sober look at the messy middle period we're living through right now.",
-        url: "https://darioamodei.com/the-adolescence-of-ai-technology",
-        type: "essay",
+          "The 2017 paper that started it all. A team at Google introduced the Transformer — the architecture behind GPT, Claude, and every major AI system today. You don't need to understand the math to grasp the key insight: by letting a model attend to all parts of an input at once, they unlocked a new era of AI capability.",
+        url: "https://arxiv.org/html/1706.03762v7",
+        type: "paper",
       },
       {
         id: "r3-2",
